@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concrete Slab & Bag Calculator — Cubic Yards & 80lb/60lb Bags</title>
+<meta name="description" content="Calculate cubic yards of concrete and the exact number of 80 lb, 60 lb, or 50 lb pre-mixed bags for slabs, footings, patios, and sidewalks. Includes 10% waste buffer.">
+<link rel="canonical" href="https://sebiglesias.com.ar/concrete-calculator/">
+<meta name="theme-color" content="#f97316">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BNDBQP0W7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2BNDBQP0W7');
+</script>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Concrete Slab & Bag Calculator — Cubic Yards & 80lb/60lb Bags">
+<meta property="og:description" content="Calculate cubic yards of concrete and the exact number of 80 lb, 60 lb, or 50 lb pre-mixed bags for slabs, footings, patios, and sidewalks. Includes 10% waste buffer.">
+<meta property="og:url" content="https://sebiglesias.com.ar/concrete-calculator/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Concrete Slab & Bag Calculator — Cubic Yards & 80lb/60lb Bags">
+<meta name="twitter:description" content="Calculate cubic yards of concrete and the exact number of 80 lb, 60 lb, or 50 lb pre-mixed bags for slabs, footings, patios, and sidewalks. Includes 10% waste buffer.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<meta name="google-adsense-account" content="ca-pub-3381238987477190">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3381238987477190" crossorigin="anonymous"></script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Concrete Slab & Bag Calculator \u2014 Cubic Yards & 80lb/60lb Bags",
+    "description": "Calculate cubic yards of concrete and the exact number of 80 lb, 60 lb, or 50 lb pre-mixed bags for slabs, footings, patios, and sidewalks. Includes 10% waste buffer.",
+    "url": "https://sebiglesias.com.ar/concrete-calculator/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many 80 lb bags of concrete are in a cubic yard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are 45 bags of 80 lb concrete in one cubic yard (27 cubic feet / 0.60 cu ft per bag = 45 bags)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How thick should a concrete patio or slab be?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Standard residential walkways, patios, and shed slabs are poured 4 inches thick (using 2x4 lumber for formwork). For heavy pickup trucks or RV pads, a 5-inch or 6-inch reinforced pour with rebar is recommended."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why add a 10% concrete waste buffer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Subgrades and gravel bases are rarely perfectly level. Subgrade depressions, spills, and form deflection routinely consume 8% to 10% more volume than theoretical math estimates."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<div class="container">
+  
+    <header>
+      <span class="badge">Concrete & Masonry</span>
+      <h1>Concrete Slab & Bag Calculator</h1>
+      <p class="subtitle">Calculate how many cubic yards and pre-mixed bags of concrete you need for slabs, patios, footings, and sidewalks.</p>
+    </header>
+    <div class="grid">
+      <div class="card">
+        <h2>Slab Dimensions</h2>
+        <div class="form-group">
+          <label for="lengthFt">Length <span>Feet</span></label>
+          <div class="input-wrapper">
+            <input type="number" id="lengthFt" class="has-suffix" value="12" min="1" max="500" step="0.5">
+            <span class="input-suffix">ft</span>
+          </div>
+          <input type="range" id="lengthRange" min="2" max="40" step="0.5" value="12">
+        </div>
+        <div class="form-group">
+          <label for="widthFt">Width <span>Feet</span></label>
+          <div class="input-wrapper">
+            <input type="number" id="widthFt" class="has-suffix" value="10" min="1" max="500" step="0.5">
+            <span class="input-suffix">ft</span>
+          </div>
+          <input type="range" id="widthRange" min="2" max="40" step="0.5" value="10">
+        </div>
+        <div class="form-group">
+          <label for="thicknessIn">Thickness <span>Inches</span></label>
+          <select id="thicknessIn">
+            <option value="3.5">3.5 inches (Sidewalks, Patios)</option>
+            <option value="4" selected>4.0 inches (Standard Driveway / Shed)</option>
+            <option value="5">5.0 inches (Heavy Vehicle Pad)</option>
+            <option value="6">6.0 inches (Commercial / Heavy Machinery)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wastePct">Waste Buffer <span>%</span></label>
+          <select id="wastePct">
+            <option value="0.05">5% (Simple rectangular form)</option>
+            <option value="0.10" selected>10% (Recommended standard)</option>
+            <option value="0.15">15% (Uneven ground or gravel base)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Materials Estimate</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card highlight">
+            <div class="kpi-label">Total Volume</div>
+            <div class="kpi-value accent" id="cubicYards">1.6 yd³</div>
+          </div>
+          <div class="kpi-card highlight">
+            <div class="kpi-label">80 lb Bags (Sakrete/Quikrete)</div>
+            <div class="kpi-value green" id="bags80">72 bags</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">60 lb Bags</div>
+            <div class="kpi-value" id="bags60">96 bags</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">50 lb Fast-Setting</div>
+            <div class="kpi-value" id="bags50">115 bags</div>
+          </div>
+        </div>
+        <div id="truckVerdict" style="background: var(--bg-card-inner); padding: 1rem; border-radius: var(--radius-md); font-size: 0.88rem; line-height: 1.5; color: var(--text-muted);">
+          Calculating...
+        </div>
+      </div>
+    </div>
+    
+
+  <section class="faq-section">
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    
+        <div class="faq-item">
+          <h3>How many 80 lb bags of concrete are in a cubic yard?</h3>
+          <p>There are 45 bags of 80 lb concrete in one cubic yard (27 cubic feet / 0.60 cu ft per bag = 45 bags).</p>
+        </div>
+        <div class="faq-item">
+          <h3>How thick should a concrete patio or slab be?</h3>
+          <p>Standard residential walkways, patios, and shed slabs are poured 4 inches thick (using 2x4 lumber for formwork). For heavy pickup trucks or RV pads, a 5-inch or 6-inch reinforced pour with rebar is recommended.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Why add a 10% concrete waste buffer?</h3>
+          <p>Subgrades and gravel bases are rarely perfectly level. Subgrade depressions, spills, and form deflection routinely consume 8% to 10% more volume than theoretical math estimates.</p>
+        </div>
+  </section>
+
+  <div class="cross-links">
+    <a href="https://sebiglesias.com.ar/car-payoff-calculator/">🚗 Car Payoff</a>
+    <a href="https://sebiglesias.com.ar/credit-card-payoff/">💳 Credit Card Payoff</a>
+    <a href="https://sebiglesias.com.ar/insurance-deductible/">🛡️ Insurance Deductible</a>
+    <a href="https://sebiglesias.com.ar/rent-vs-buy-calculator/">🏡 Rent vs Buy</a>
+    <a href="https://sebiglesias.com.ar/concrete-calculator/">🧱 Concrete Calculator</a>
+    <a href="https://sebiglesias.com.ar/moving-truck-calculator/">📦 Moving Truck</a>
+    <a href="https://sebiglesias.com.ar/ac-btu-calculator/">❄️ AC BTU Sizing</a>
+    <a href="https://sebiglesias.com.ar/mulch-calculator/">🌱 Mulch Calculator</a>
+    <a href="https://sebiglesias.com.ar/salary-to-hourly/">💼 Salary to Hourly</a>
+    <a href="https://sebiglesias.com.ar/paint-calculator/">🎨 Paint Calculator</a>
+  </div>
+
+  <footer>
+    <p>© 2026 Free Web Utility. Created by <a href="https://sebiglesias.com.ar">Sebastián Iglesias</a>. Free & Fast.</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Concrete Slab & Bag Calculator \u2014 Cubic Yards & 80lb/60lb Bags",
+  "short_name": "concrete-calculator",
+  "start_url": "https://sebiglesias.com.ar/concrete-calculator/",
+  "display": "standalone",
+  "background_color": "#0e0d0b",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
